@@ -79,28 +79,33 @@ int main(void) {
     		errcnt++;
 		}
 	}
+	printf("\n타이핑 오류의 횟수는 %d\n", errcnt);
+	time(&time2);
+	typing(time1,time2);
 
 	printf("\n다음 문장을 그대로 입력하세요.\n%s\n", text1);
-	while ((nread=read(fd1, &ch1, 1)) > 0 && ch1 != '\n') {
-  		if (ch1 == text1[cnt++])
+	while ((nread1=read(fd1, &ch1, 1)) > 0 && ch1 != '\n') {
+  		if (ch1 == text1[cnt1++])
   			write(fd1, &ch1, 1);
   		else {
     		write(fd1, "*", 1);
-    		errcnt++;
+    		errcnt1++;
   		}
 	}
+	printf("\n타이핑 오류의 횟수는 %d\n", errcnt1);
+	time(&time2);
+	typing(time1,time2);
 
 	printf("\n다음 문장을 그대로 입력하세요.\n%s\n", text2);
-	while ((nread=read(fd2, &ch2, 1)) > 0 && ch2 != '\n') {
-	  	if (ch2 == text2[cnt++])
+	while ((nread2=read(fd2, &ch2, 1)) > 0 && ch2 != '\n') {
+	  	if (ch2 == text2[cnt2++])
   			write(fd2, &ch2, 1);
   		else {
     		write(fd2, "*", 1);
-    		errcnt++;
+    		errcnt2++;
   		}
 	}
-
-	printf("\n타이핑 오류의 횟수는 %d\n", errcnt);
+	printf("\n타이핑 오류의 횟수는 %d\n", errcnt2);
 	time(&time2);
 	typing(time1,time2);
 
